@@ -1,0 +1,231 @@
+{
+    "$schema": "https://slimhuys.nl/schemas/dynamic-tariffs-nl/v1.json",
+    "generated_at": "2026-05-01T13:25:03+02:00",
+    "source_url": "https://slimhuys.nl/v1/suppliers",
+    "license": "CC-BY-4.0",
+    "maintainer": "SlimHuys (https://slimhuys.nl)",
+    "note": "Dynamische stroomtarieven NL — bedragen excl. btw, energiebelasting komt uit `tax_rates` (zie SlimHuys/slimhuys.nl). Tarieven worden periodiek bijgewerkt; PR's welkom voor correcties met bron-link.",
+    "suppliers": [
+        {
+            "slug": "anwb-energie",
+            "name": "ANWB Energie",
+            "active": true,
+            "official_api": false,
+            "billing_resolution_minutes": 60,
+            "markup_eur_per_kwh": 0.0149,
+            "monthly_fee_eur": 7.02,
+            "feedin": {
+                "markup_eur_per_kwh": 0,
+                "bonus_pct": 0,
+                "bonus_daytime_only": false,
+                "bonus_annual_cap_kwh": null
+            },
+            "signup_url": "https://www.anwb.nl/energie",
+            "notes": "Verified 2026-04-28 — anwb.nl/energie/actuele-tarieven (HIGH)"
+        },
+        {
+            "slug": "budget-energie",
+            "name": "Budget Energie",
+            "active": true,
+            "official_api": false,
+            "billing_resolution_minutes": 60,
+            "markup_eur_per_kwh": 0.0179,
+            "monthly_fee_eur": 5.99,
+            "feedin": {
+                "markup_eur_per_kwh": 0,
+                "bonus_pct": 0,
+                "bonus_daytime_only": false,
+                "bonus_annual_cap_kwh": null
+            },
+            "signup_url": "https://www.budgetenergie.nl",
+            "notes": "Added 2026-04-30 — markup ESTIMATE (peer: Coolblue/easyEnergy-tier). Maandkosten 1-op-1 van Eerlijkverbruik 2026-04. Re-verify Q3 2026."
+        },
+        {
+            "slug": "coolblue-energie",
+            "name": "Coolblue Energie",
+            "active": true,
+            "official_api": false,
+            "billing_resolution_minutes": 15,
+            "markup_eur_per_kwh": 0.0188,
+            "monthly_fee_eur": 5.12,
+            "feedin": {
+                "markup_eur_per_kwh": 0,
+                "bonus_pct": 0,
+                "bonus_daytime_only": false,
+                "bonus_annual_cap_kwh": null
+            },
+            "signup_url": "https://www.coolblue.nl/energiecontracten",
+            "notes": "Verified 2026-04-28 — coolblue.nl/energiecontracten/tarieven (HIGH); kwartier-tarieven sinds 2025"
+        },
+        {
+            "slug": "easyenergy",
+            "name": "easyEnergy",
+            "active": true,
+            "official_api": false,
+            "billing_resolution_minutes": 15,
+            "markup_eur_per_kwh": 0.018,
+            "monthly_fee_eur": 5.79,
+            "feedin": {
+                "markup_eur_per_kwh": 0,
+                "bonus_pct": 0,
+                "bonus_daytime_only": false,
+                "bonus_annual_cap_kwh": null
+            },
+            "signup_url": "https://www.easyenergy.com",
+            "notes": "Verified 2026-04-28 — easyenergy.com/klantenservice/onze-tarieven (HIGH); update elke 15 min"
+        },
+        {
+            "slug": "eneco",
+            "name": "Eneco",
+            "active": true,
+            "official_api": false,
+            "billing_resolution_minutes": 60,
+            "markup_eur_per_kwh": 0.0149,
+            "monthly_fee_eur": 5.79,
+            "feedin": {
+                "markup_eur_per_kwh": 0,
+                "bonus_pct": 0,
+                "bonus_daytime_only": false,
+                "bonus_annual_cap_kwh": null
+            },
+            "signup_url": "https://www.eneco.nl/energie/dynamische-energie",
+            "notes": "Verified 2026-04-28 — eneco.nl (Eneco Dynamisch, HIGH)"
+        },
+        {
+            "slug": "energyzero",
+            "name": "EnergyZero",
+            "active": true,
+            "official_api": false,
+            "billing_resolution_minutes": 15,
+            "markup_eur_per_kwh": 0.0179,
+            "monthly_fee_eur": 7.51,
+            "feedin": {
+                "markup_eur_per_kwh": 0,
+                "bonus_pct": 0,
+                "bonus_daytime_only": false,
+                "bonus_annual_cap_kwh": null
+            },
+            "signup_url": "https://www.energyzero.nl",
+            "notes": "Added 2026-04-30 — eigen merk van EnergyZero-platform (zelfde infra als ANWB/NextEnergy). Kwartier-tarieven sinds 1 jan 2026. Markup ESTIMATE; maandkosten van Eerlijkverbruik 2026-04. Re-verify Q3 2026."
+        },
+        {
+            "slug": "frank-energie",
+            "name": "Frank Energie",
+            "active": true,
+            "official_api": false,
+            "billing_resolution_minutes": 15,
+            "markup_eur_per_kwh": 0.0149,
+            "monthly_fee_eur": 5.79,
+            "feedin": {
+                "markup_eur_per_kwh": 0,
+                "bonus_pct": 0,
+                "bonus_daytime_only": false,
+                "bonus_annual_cap_kwh": null
+            },
+            "signup_url": "https://www.frankenergie.nl",
+            "notes": "Verified 2026-04-28 — frankenergie.nl (MEDIUM, re-check)"
+        },
+        {
+            "slug": "nextenergy",
+            "name": "NextEnergy",
+            "active": true,
+            "official_api": false,
+            "billing_resolution_minutes": 60,
+            "markup_eur_per_kwh": 0.0182,
+            "monthly_fee_eur": 4.95,
+            "feedin": {
+                "markup_eur_per_kwh": 0,
+                "bonus_pct": 0,
+                "bonus_daytime_only": false,
+                "bonus_annual_cap_kwh": null
+            },
+            "signup_url": "https://nextenergy.nl",
+            "notes": "Verified 2026-04-28 — nextenergy.nl (MEDIUM, eigen pagina vs. vergelijker verschilden ~0,4 ct)"
+        },
+        {
+            "slug": "powerpeers",
+            "name": "Powerpeers",
+            "active": true,
+            "official_api": false,
+            "billing_resolution_minutes": 15,
+            "markup_eur_per_kwh": 0.007,
+            "monthly_fee_eur": 5.59,
+            "feedin": {
+                "markup_eur_per_kwh": 0,
+                "bonus_pct": 0,
+                "bonus_daytime_only": false,
+                "bonus_annual_cap_kwh": null
+            },
+            "signup_url": "https://www.powerpeers.nl",
+            "notes": "Verified 2026-04-28 — powerpeers.nl (MEDIUM, laagste opslag in NL); Kwartier-tarieven sinds 28-04-2026"
+        },
+        {
+            "slug": "tibber",
+            "name": "Tibber",
+            "active": true,
+            "official_api": true,
+            "billing_resolution_minutes": 15,
+            "markup_eur_per_kwh": 0.0207,
+            "monthly_fee_eur": 4.95,
+            "feedin": {
+                "markup_eur_per_kwh": 0,
+                "bonus_pct": 0,
+                "bonus_daytime_only": false,
+                "bonus_annual_cap_kwh": null
+            },
+            "signup_url": "https://tibber.com/nl",
+            "notes": "Verified 2026-04-28 — support.tibber.com (HIGH); officiële GraphQL-API beschikbaar."
+        },
+        {
+            "slug": "vandebron",
+            "name": "Vandebron",
+            "active": true,
+            "official_api": false,
+            "billing_resolution_minutes": 60,
+            "markup_eur_per_kwh": 0.022,
+            "monthly_fee_eur": 7,
+            "feedin": {
+                "markup_eur_per_kwh": 0,
+                "bonus_pct": 0,
+                "bonus_daytime_only": false,
+                "bonus_annual_cap_kwh": null
+            },
+            "signup_url": "https://vandebron.nl",
+            "notes": "Added 2026-04-30 — markup ESTIMATE (peer: Pure Energie premium-green-tier). Maandkosten 1-op-1 van Eerlijkverbruik 2026-04. Re-verify Q3 2026."
+        },
+        {
+            "slug": "vrijopnaam",
+            "name": "Vrijopnaam",
+            "active": true,
+            "official_api": false,
+            "billing_resolution_minutes": 60,
+            "markup_eur_per_kwh": 0.022,
+            "monthly_fee_eur": 8,
+            "feedin": {
+                "markup_eur_per_kwh": 0,
+                "bonus_pct": 0,
+                "bonus_daytime_only": false,
+                "bonus_annual_cap_kwh": null
+            },
+            "signup_url": "https://www.vrijopnaam.nl",
+            "notes": "Added 2026-04-30 — markup ESTIMATE (high-end tier). Geen zonnepanelen-friendly (geen saldering binnen Vrijopnaam). Re-verify Q3 2026."
+        },
+        {
+            "slug": "zonneplan",
+            "name": "Zonneplan",
+            "active": true,
+            "official_api": false,
+            "billing_resolution_minutes": 60,
+            "markup_eur_per_kwh": 0.0165,
+            "monthly_fee_eur": 5.17,
+            "feedin": {
+                "markup_eur_per_kwh": 0.02,
+                "bonus_pct": 0.1,
+                "bonus_daytime_only": true,
+                "bonus_annual_cap_kwh": 7500
+            },
+            "signup_url": "https://www.zonneplan.nl",
+            "notes": "Verified 2026-04-28 — Eerlijkverbruik (MEDIUM, re-check)"
+        }
+    ]
+}
