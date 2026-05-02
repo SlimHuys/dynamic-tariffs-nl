@@ -1,6 +1,6 @@
 {
     "$schema": "https://slimhuys.nl/schemas/dynamic-tariffs-nl/v2.json",
-    "generated_at": "2026-05-02T14:36:33+02:00",
+    "generated_at": "2026-05-02T14:53:07+02:00",
     "source_url": "https://slimhuys.nl/v1/suppliers",
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
@@ -48,7 +48,7 @@
                     "params": []
                 }
             },
-            "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0149 — ANWB Energie-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier)",
+            "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0149 — ANWB Energie-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
             "signup_url": "https://www.anwb.nl/energie",
             "notes": "Verified 2026-04-28 — anwb.nl/energie/actuele-tarieven (HIGH)"
         },
@@ -94,7 +94,7 @@
                     "params": []
                 }
             },
-            "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0179 — Budget Energie-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier)",
+            "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0179 — Budget Energie-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
             "signup_url": "https://www.budgetenergie.nl",
             "notes": "Added 2026-04-30 — markup ESTIMATE (peer Coolblue-tier). Re-verify Q3 2026."
         },
@@ -140,7 +140,7 @@
                     "params": []
                 }
             },
-            "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0188 — Coolblue Energie-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier)",
+            "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0188 — Coolblue Energie-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
             "signup_url": "https://www.coolblue.nl/energiecontracten",
             "notes": "Verified 2026-04-28 — coolblue.nl/energiecontracten/tarieven (HIGH)"
         },
@@ -186,7 +186,7 @@
                     "params": []
                 }
             },
-            "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0180 — easyEnergy-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier)",
+            "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0180 — easyEnergy-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
             "signup_url": "https://www.easyenergy.com",
             "notes": "Verified 2026-04-28 — easyenergy.com (HIGH); update elke 15 min"
         },
@@ -232,7 +232,7 @@
                     "params": []
                 }
             },
-            "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0149 — Eneco-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier)",
+            "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0149 — Eneco-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
             "signup_url": "https://www.eneco.nl/energie/dynamische-energie",
             "notes": "Verified 2026-04-28 — eneco.nl (Eneco Dynamisch, HIGH)"
         },
@@ -278,7 +278,7 @@
                     "params": []
                 }
             },
-            "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0179 — EnergyZero-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier)",
+            "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0179 — EnergyZero-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
             "signup_url": "https://www.energyzero.nl",
             "notes": "Added 2026-04-30 — eigen merk EnergyZero (zelfde platform als ANWB/NextEnergy)."
         },
@@ -324,7 +324,7 @@
                     "params": []
                 }
             },
-            "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0149 — Frank Energie-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier)",
+            "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0149 — Frank Energie-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
             "signup_url": "https://www.frankenergie.nl",
             "notes": "Verified 2026-04-28 — frankenergie.nl (MEDIUM, re-check)"
         },
@@ -370,7 +370,7 @@
                     "params": []
                 }
             },
-            "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0182 — NextEnergy-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier)",
+            "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0182 — NextEnergy-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
             "signup_url": "https://nextenergy.nl",
             "notes": "Verified 2026-04-28 — nextenergy.nl (MEDIUM)"
         },
@@ -416,7 +416,7 @@
                     "params": []
                 }
             },
-            "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0070 — Powerpeers-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier)",
+            "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0070 — Powerpeers-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
             "signup_url": "https://www.powerpeers.nl",
             "notes": "Verified 2026-04-28 — powerpeers.nl (MEDIUM, laagste opslag NL); kwartier sinds 28-04-2026"
         },
@@ -462,7 +462,7 @@
                     "params": []
                 }
             },
-            "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0207 — Tibber-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier)",
+            "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0207 — Tibber-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
             "signup_url": "https://tibber.com/nl",
             "notes": "Verified 2026-04-28 — support.tibber.com (HIGH); officiële GraphQL-API."
         },
@@ -508,7 +508,7 @@
                     "params": []
                 }
             },
-            "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0220 — Vandebron-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier)",
+            "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0220 — Vandebron-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
             "signup_url": "https://vandebron.nl",
             "notes": "Added 2026-04-30 — markup ESTIMATE (premium-green). Re-verify Q3 2026."
         },
@@ -554,7 +554,7 @@
                     "params": []
                 }
             },
-            "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0220 — Vrijopnaam-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier)",
+            "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0220 — Vrijopnaam-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
             "signup_url": "https://www.vrijopnaam.nl",
             "notes": "Added 2026-04-30 — markup ESTIMATE (high-end tier). Re-verify Q3 2026."
         },
@@ -606,7 +606,7 @@
                     }
                 }
             },
-            "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0200 — Zonneplan-handling-fee\n\n**Teruglevering (per kWh):**\n  smoothed Zonnebonus: (gewogen-EPEX-positief + €0,0200) × 1,10, alleen tijdens zonuren, cap 7500 kWh/jaar, buiten cap/zonuren: max(0, EPEX)",
+            "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0200 — Zonneplan-handling-fee\n\n**Teruglevering (per kWh):**\n  smoothed Zonnebonus: (gewogen-EPEX-positief + €0,0200) × 1,10 × 1,21 (incl. btw), alleen tijdens zonuren, cap 7500 kWh/jaar, buiten cap/zonuren: max(0, EPEX) × 1,21",
             "signup_url": "https://www.zonneplan.nl",
             "notes": "Verified 2026-05-02 — markup €0,02 gemeten tegen Zonneplan-app (8,24 ct match). Zonnebonus reverse-engineered ~3% drift."
         }
