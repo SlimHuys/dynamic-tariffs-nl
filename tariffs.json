@@ -1,6 +1,6 @@
 {
     "$schema": "https://slimhuys.nl/schemas/dynamic-tariffs-nl/v2.json",
-    "generated_at": "2026-05-02T14:30:19+02:00",
+    "generated_at": "2026-05-02T14:36:33+02:00",
     "source_url": "https://slimhuys.nl/v1/suppliers",
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
@@ -570,7 +570,7 @@
             ],
             "params": {
                 "billing_resolution_minutes": 60,
-                "markup_eur_per_kwh": 0.0165,
+                "markup_eur_per_kwh": 0.02,
                 "monthly_fee_eur": 5.17
             },
             "pricing_spec": {
@@ -591,7 +591,7 @@
                         },
                         {
                             "op": "add",
-                            "value": 0.0165,
+                            "value": 0.02,
                             "label": "Zonneplan-handling-fee"
                         }
                     ]
@@ -606,9 +606,9 @@
                     }
                 }
             },
-            "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0165 — Zonneplan-handling-fee\n\n**Teruglevering (per kWh):**\n  smoothed Zonnebonus: (gewogen-EPEX-positief + €0,0200) × 1,10, alleen tijdens zonuren, cap 7500 kWh/jaar, buiten cap/zonuren: max(0, EPEX)",
+            "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0200 — Zonneplan-handling-fee\n\n**Teruglevering (per kWh):**\n  smoothed Zonnebonus: (gewogen-EPEX-positief + €0,0200) × 1,10, alleen tijdens zonuren, cap 7500 kWh/jaar, buiten cap/zonuren: max(0, EPEX)",
             "signup_url": "https://www.zonneplan.nl",
-            "notes": "Verified 2026-04-28 — Eerlijkverbruik (MEDIUM); Zonnebonus reverse-engineered ~3% drift."
+            "notes": "Verified 2026-05-02 — markup €0,02 gemeten tegen Zonneplan-app (8,24 ct match). Zonnebonus reverse-engineered ~3% drift."
         }
     ]
 }
