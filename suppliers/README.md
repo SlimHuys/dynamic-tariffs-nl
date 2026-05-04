@@ -18,5 +18,3 @@ PR's op individuele leveranciers welkom — bewerk het JSON-bestand in deze map.
 | [`vandebron`](vandebron.json) | Vandebron | 0.0220 | 7.00 | 60 min | 1.510 |
 | [`vrijopnaam`](vrijopnaam.json) | Vrijopnaam | 0.0220 | 8.00 | 60 min | 1.350 |
 | [`zonneplan`](zonneplan.json) | Zonneplan | 0.0200 | 5.17 | 60 min | 1.346 |
-
-Zie ook [`../tariffs.json`](../tariffs.json) voor de volledige bundle in één file.
