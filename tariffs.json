@@ -1,6 +1,6 @@
 {
     "$schema": "https://slimhuys.nl/schemas/dynamic-tariffs-nl/v2.json",
-    "generated_at": "2026-05-02T15:58:59+02:00",
+    "generated_at": "2026-05-04T17:54:56+02:00",
     "source_url": "https://slimhuys.nl/v1/suppliers",
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
@@ -20,6 +20,7 @@
                 "markup_eur_per_kwh": 0.0149,
                 "monthly_fee_eur": 7.02
             },
+            "default_gas_rate_eur_m3": 1.42,
             "pricing_spec": {
                 "version": 1,
                 "consumed": {
@@ -66,6 +67,7 @@
                 "markup_eur_per_kwh": 0.0179,
                 "monthly_fee_eur": 5.99
             },
+            "default_gas_rate_eur_m3": 1.42,
             "pricing_spec": {
                 "version": 1,
                 "consumed": {
@@ -112,6 +114,7 @@
                 "markup_eur_per_kwh": 0.0188,
                 "monthly_fee_eur": 5.12
             },
+            "default_gas_rate_eur_m3": 1.4,
             "pricing_spec": {
                 "version": 1,
                 "consumed": {
@@ -158,6 +161,7 @@
                 "markup_eur_per_kwh": 0.018,
                 "monthly_fee_eur": 5.79
             },
+            "default_gas_rate_eur_m3": 1.05,
             "pricing_spec": {
                 "version": 1,
                 "consumed": {
@@ -204,6 +208,7 @@
                 "markup_eur_per_kwh": 0.0149,
                 "monthly_fee_eur": 5.79
             },
+            "default_gas_rate_eur_m3": 1.4,
             "pricing_spec": {
                 "version": 1,
                 "consumed": {
@@ -250,6 +255,7 @@
                 "markup_eur_per_kwh": 0.0179,
                 "monthly_fee_eur": 7.51
             },
+            "default_gas_rate_eur_m3": 1.05,
             "pricing_spec": {
                 "version": 1,
                 "consumed": {
@@ -296,6 +302,7 @@
                 "markup_eur_per_kwh": 0.0149,
                 "monthly_fee_eur": 5.79
             },
+            "default_gas_rate_eur_m3": 1.18,
             "pricing_spec": {
                 "version": 1,
                 "consumed": {
@@ -342,6 +349,7 @@
                 "markup_eur_per_kwh": 0.0182,
                 "monthly_fee_eur": 4.95
             },
+            "default_gas_rate_eur_m3": 1.18,
             "pricing_spec": {
                 "version": 1,
                 "consumed": {
@@ -388,6 +396,7 @@
                 "markup_eur_per_kwh": 0.007,
                 "monthly_fee_eur": 5.59
             },
+            "default_gas_rate_eur_m3": 1.1,
             "pricing_spec": {
                 "version": 1,
                 "consumed": {
@@ -434,6 +443,7 @@
                 "markup_eur_per_kwh": 0.0207,
                 "monthly_fee_eur": 4.95
             },
+            "default_gas_rate_eur_m3": 1.05,
             "pricing_spec": {
                 "version": 1,
                 "consumed": {
@@ -480,6 +490,7 @@
                 "markup_eur_per_kwh": 0.022,
                 "monthly_fee_eur": 7
             },
+            "default_gas_rate_eur_m3": 1.51,
             "pricing_spec": {
                 "version": 1,
                 "consumed": {
@@ -545,6 +556,7 @@
                 "markup_eur_per_kwh": 0.022,
                 "monthly_fee_eur": 8
             },
+            "default_gas_rate_eur_m3": 1.35,
             "pricing_spec": {
                 "version": 1,
                 "consumed": {
@@ -592,6 +604,7 @@
                 "markup_eur_per_kwh": 0.02,
                 "monthly_fee_eur": 5.17
             },
+            "default_gas_rate_eur_m3": 1.346,
             "pricing_spec": {
                 "version": 1,
                 "consumed": {

@@ -1,0 +1,54 @@
+{
+    "$schema": "https://slimhuys.nl/schemas/dynamic-tariffs-nl/v2.json",
+    "generated_at": "2026-05-04T17:54:56+02:00",
+    "source_url": "https://slimhuys.nl/v1/suppliers",
+    "license": "CC-BY-4.0",
+    "maintainer": "SlimHuys (https://slimhuys.nl)",
+    "supplier": {
+        "slug": "tibber",
+        "name": "Tibber",
+        "active": true,
+        "official_api": true,
+        "verified_at": "2026-04-28",
+        "sources": [
+            "https://github.com/JaccoR/hass-entso-e/discussions/239"
+        ],
+        "params": {
+            "billing_resolution_minutes": 15,
+            "markup_eur_per_kwh": 0.0207,
+            "monthly_fee_eur": 4.95
+        },
+        "default_gas_rate_eur_m3": 1.05,
+        "pricing_spec": {
+            "version": 1,
+            "consumed": {
+                "epex": "quarter",
+                "pipeline": [
+                    {
+                        "op": "add",
+                        "ref": "tax.energy_tax_electricity",
+                        "label": "Energiebelasting"
+                    },
+                    {
+                        "op": "multiply",
+                        "ref": "tax.vat_rate",
+                        "factor": "1+x",
+                        "label": "21% btw"
+                    },
+                    {
+                        "op": "add",
+                        "value": 0.0207,
+                        "label": "Tibber-handling-fee"
+                    }
+                ]
+            },
+            "delivered": {
+                "strategy": "epex_passthrough",
+                "params": []
+            }
+        },
+        "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0207 — Tibber-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
+        "signup_url": "https://tibber.com/nl",
+        "notes": "Verified 2026-04-28 — support.tibber.com (HIGH); officiële GraphQL-API."
+    }
+}
