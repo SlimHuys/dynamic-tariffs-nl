@@ -1,6 +1,6 @@
 {
     "$schema": "https://slimhuys.nl/schemas/dynamic-tariffs-nl/v2.json",
-    "generated_at": "2026-05-04T17:54:56+02:00",
+    "generated_at": "2026-05-12T13:50:08+00:00",
     "source_url": "https://slimhuys.nl/v1/suppliers",
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
@@ -9,46 +9,18 @@
         "name": "Budget Energie",
         "active": true,
         "official_api": false,
-        "verified_at": "2026-04-28",
-        "sources": [
-            "https://github.com/JaccoR/hass-entso-e/discussions/288"
-        ],
+        "verified_at": null,
+        "sources": [],
         "params": {
             "billing_resolution_minutes": 60,
             "markup_eur_per_kwh": 0.0179,
-            "monthly_fee_eur": 5.99
+            "monthly_fee_eur": 5.99,
+            "monthly_fee_electricity_only_eur": null
         },
-        "default_gas_rate_eur_m3": 1.42,
-        "pricing_spec": {
-            "version": 1,
-            "consumed": {
-                "epex": "hour",
-                "pipeline": [
-                    {
-                        "op": "add",
-                        "ref": "tax.energy_tax_electricity",
-                        "label": "Energiebelasting"
-                    },
-                    {
-                        "op": "multiply",
-                        "ref": "tax.vat_rate",
-                        "factor": "1+x",
-                        "label": "21% btw"
-                    },
-                    {
-                        "op": "add",
-                        "value": 0.0179,
-                        "label": "Budget Energie-handling-fee"
-                    }
-                ]
-            },
-            "delivered": {
-                "strategy": "epex_passthrough",
-                "params": []
-            }
-        },
-        "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0179 — Budget Energie-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
+        "default_gas_rate_eur_m3": null,
+        "pricing_spec": null,
+        "formula": null,
         "signup_url": "https://www.budgetenergie.nl",
-        "notes": "Added 2026-04-30 — markup ESTIMATE (peer Coolblue-tier). Re-verify Q3 2026."
+        "notes": "Added 2026-04-30 — markup ESTIMATE (peer: Coolblue/easyEnergy-tier). Maandkosten 1-op-1 van Eerlijkverbruik 2026-04. Re-verify Q3 2026."
     }
 }
