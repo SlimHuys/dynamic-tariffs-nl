@@ -5,8 +5,8 @@
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
     "supplier": {
-        "slug": "budget-energie",
-        "name": "Budget Energie",
+        "slug": "easyenergy",
+        "name": "easyEnergy",
         "active": true,
         "official_api": false,
         "verified_at": "2025-12-17",
@@ -14,16 +14,16 @@
             "https://docs.google.com/spreadsheets/d/1H0E8g6P-ydWYRYUAfELzpnIHBMqae3Ul8uNKU3d1s1Y"
         ],
         "params": {
-            "billing_resolution_minutes": 60,
-            "markup_eur_per_kwh": 0.0168,
-            "monthly_fee_eur": 5.99,
+            "billing_resolution_minutes": 15,
+            "markup_eur_per_kwh": 0.0218,
+            "monthly_fee_eur": 7,
             "monthly_fee_electricity_only_eur": null
         },
-        "default_gas_rate_eur_m3": 1.42,
+        "default_gas_rate_eur_m3": 1.05,
         "pricing_spec": {
             "version": 1,
             "consumed": {
-                "epex": "hour",
+                "epex": "quarter",
                 "pipeline": [
                     {
                         "op": "add",
@@ -38,18 +38,21 @@
                     },
                     {
                         "op": "add",
-                        "value": 0.01682,
-                        "label": "Budget Energie-handling-fee"
+                        "value": 0.02178,
+                        "label": "easyEnergy-handling-fee"
                     }
                 ]
             },
             "delivered": {
-                "strategy": "epex_passthrough",
-                "params": []
+                "strategy": "feedin_market_minus",
+                "params": {
+                    "fee_eur_per_kwh": 0.0121,
+                    "fee_includes_vat": true
+                }
             }
         },
-        "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0168 — Budget Energie-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
-        "signup_url": "https://www.budgetenergie.nl",
-        "notes": "Verified 2025-12-17 (community-sheet). Saldering en TLV onbekend."
+        "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0218 — easyEnergy-handling-fee\n\n**Teruglevering (per kWh):**\n  feedin_market_minus (onbekende strategy — controleer spec)",
+        "signup_url": "https://www.easyenergy.com",
+        "notes": "Verified 2025-12-17 (community-sheet). Saldeert per maand i.p.v. jaar (niet gemodelleerd). Terugleveropslag 1,21 ct/kWh ook binnen saldeervolume."
     }
 }

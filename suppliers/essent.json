@@ -5,8 +5,8 @@
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
     "supplier": {
-        "slug": "budget-energie",
-        "name": "Budget Energie",
+        "slug": "essent",
+        "name": "Essent",
         "active": true,
         "official_api": false,
         "verified_at": "2025-12-17",
@@ -15,11 +15,11 @@
         ],
         "params": {
             "billing_resolution_minutes": 60,
-            "markup_eur_per_kwh": 0.0168,
-            "monthly_fee_eur": 5.99,
+            "markup_eur_per_kwh": 0.0253,
+            "monthly_fee_eur": 7.49,
             "monthly_fee_electricity_only_eur": null
         },
-        "default_gas_rate_eur_m3": 1.42,
+        "default_gas_rate_eur_m3": null,
         "pricing_spec": {
             "version": 1,
             "consumed": {
@@ -38,18 +38,21 @@
                     },
                     {
                         "op": "add",
-                        "value": 0.01682,
-                        "label": "Budget Energie-handling-fee"
+                        "value": 0.02528,
+                        "label": "Essent-handling-fee"
                     }
                 ]
             },
             "delivered": {
-                "strategy": "epex_passthrough",
-                "params": []
+                "strategy": "feedin_market_minus",
+                "params": {
+                    "fee_eur_per_kwh": 0.02528,
+                    "fee_includes_vat": true
+                }
             }
         },
-        "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0168 — Budget Energie-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
-        "signup_url": "https://www.budgetenergie.nl",
-        "notes": "Verified 2025-12-17 (community-sheet). Saldering en TLV onbekend."
+        "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0253 — Essent-handling-fee\n\n**Teruglevering (per kWh):**\n  feedin_market_minus (onbekende strategy — controleer spec)",
+        "signup_url": null,
+        "notes": "Added 2025-12-17 (community-sheet). Vastrecht gas €5,99 (afwijkend). TLV = marktprijs − 2,528 ct. Saldering onbekend."
     }
 }
