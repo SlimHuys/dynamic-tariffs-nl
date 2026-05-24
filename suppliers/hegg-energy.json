@@ -5,21 +5,21 @@
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
     "supplier": {
-        "slug": "tibber",
-        "name": "Tibber",
+        "slug": "hegg-energy",
+        "name": "Hegg Energy",
         "active": true,
-        "official_api": true,
-        "verified_at": "2025-12-17",
+        "official_api": false,
+        "verified_at": "2026-05-23",
         "sources": [
-            "https://docs.google.com/spreadsheets/d/1H0E8g6P-ydWYRYUAfELzpnIHBMqae3Ul8uNKU3d1s1Y"
+            "https://jeroen.nl/dynamische-energie/aanbieders/hegg-energy"
         ],
         "params": {
             "billing_resolution_minutes": 15,
-            "markup_eur_per_kwh": 0.0248,
-            "monthly_fee_eur": 5.99,
+            "markup_eur_per_kwh": 0.0339,
+            "monthly_fee_eur": 7.5,
             "monthly_fee_electricity_only_eur": null
         },
-        "default_gas_rate_eur_m3": 1.05,
+        "default_gas_rate_eur_m3": null,
         "pricing_spec": {
             "version": 1,
             "consumed": {
@@ -38,21 +38,21 @@
                     },
                     {
                         "op": "add",
-                        "value": 0.0248,
-                        "label": "Tibber-handling-fee"
+                        "value": 0.0339,
+                        "label": "Hegg Energy-handling-fee"
                     }
                 ]
             },
             "delivered": {
                 "strategy": "feedin_fixed",
                 "params": {
-                    "rate_eur_per_kwh": 0.0248,
+                    "rate_eur_per_kwh": 0.0339,
                     "rate_includes_vat": true
                 }
             }
         },
-        "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0248 — Tibber-handling-fee\n\n**Teruglevering (per kWh):**\n  feedin_fixed (onbekende strategy — controleer spec)",
-        "signup_url": "https://tibber.com/nl",
-        "notes": "Verified 2025-12-17 (community-sheet). TLV vast 2,48 ct/kWh (gas via EnergyZero, 7,495 ct opslag). Officiële GraphQL-API."
+        "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0339 — Hegg Energy-handling-fee\n\n**Teruglevering (per kWh):**\n  feedin_fixed (onbekende strategy — controleer spec)",
+        "signup_url": "https://hegg.energy/dynamisch-energiecontract",
+        "notes": "Added 2026-05-23 (jeroen.nl + hegg.energy/support). Wederverkoper van EnergyZero, daarom kwartier-resolutie. Saldeert correct op jaarbasis; TLV = vast €0,0339/kWh incl. btw binnen saldeervolume, €0 buiten (saldering vervalt 2027). Relatief hoge opslag t.o.v. peers (~2 ct gemiddeld). Brand-color is placeholder (geen officiële brand-guide gevonden) — verifieer/update bij voorkeur."
     }
 }
