@@ -5,8 +5,8 @@
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
     "supplier": {
-        "slug": "eneco",
-        "name": "Eneco",
+        "slug": "frank-energie-uur",
+        "name": "Frank Energie (uur)",
         "active": true,
         "official_api": false,
         "verified_at": "2025-12-17",
@@ -15,11 +15,11 @@
         ],
         "params": {
             "billing_resolution_minutes": 60,
-            "markup_eur_per_kwh": 0.0226,
+            "markup_eur_per_kwh": 0.0182,
             "monthly_fee_eur": 7,
-            "monthly_fee_electricity_only_eur": 8.99
+            "monthly_fee_electricity_only_eur": null
         },
-        "default_gas_rate_eur_m3": 1.4,
+        "default_gas_rate_eur_m3": 1.18,
         "pricing_spec": {
             "version": 1,
             "consumed": {
@@ -38,21 +38,21 @@
                     },
                     {
                         "op": "add",
-                        "value": 0.02257,
-                        "label": "Eneco-handling-fee"
+                        "value": 0.01815,
+                        "label": "Frank Energie (uur)-handling-fee"
                     }
                 ]
             },
             "delivered": {
                 "strategy": "feedin_market_minus",
                 "params": {
-                    "fee_eur_per_kwh": 0.02923,
-                    "fee_includes_vat": false
+                    "fee_eur_per_kwh": 0.01271,
+                    "fee_includes_vat": true
                 }
             }
         },
-        "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0226 — Eneco-handling-fee\n\n**Teruglevering (per kWh):**\n  feedin_market_minus (onbekende strategy — controleer spec)",
-        "signup_url": "https://www.eneco.nl/energie/dynamische-energie",
-        "notes": "Verified 2025-12-17 (community-sheet). Vastrecht stroom-alleen €8,99 (i.c.m. gas €7,00). TLV = marktprijs ex BTW − 2,923 ct."
+        "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0182 — Frank Energie (uur)-handling-fee\n\n**Teruglevering (per kWh):**\n  feedin_market_minus (onbekende strategy — controleer spec)",
+        "signup_url": null,
+        "notes": "Verified 2025-12-17 (community-sheet). Uur-tarief (60 min). Zelfde tarieven als frank-energie; verschil zit in EPEX-gemiddelde (uur vs kwartier). TLV = marktprijs incl BTW − 1,271 ct."
     }
 }

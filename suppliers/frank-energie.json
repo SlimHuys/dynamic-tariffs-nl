@@ -1,6 +1,6 @@
 {
     "$schema": "https://slimhuys.nl/schemas/dynamic-tariffs-nl/v2.json",
-    "generated_at": "2026-06-29T04:08:07+02:00",
+    "generated_at": "2026-06-30T04:12:48+02:00",
     "source_url": "https://slimhuys.nl/v1/suppliers",
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
@@ -53,6 +53,6 @@
         },
         "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0182 — Frank Energie-handling-fee\n\n**Teruglevering (per kWh):**\n  feedin_market_minus (onbekende strategy — controleer spec)",
         "signup_url": "https://www.frankenergie.nl",
-        "notes": "Verified 2025-12-17 (community-sheet). TLV = marktprijs incl BTW − 1,271 ct. Inkoopvergoeding 2× bij salderen (jaarsaldering, niet gemodelleerd)."
+        "notes": "Verified 2025-12-17 (community-sheet). Kwartier-tarief (15 min). TLV = marktprijs incl BTW − 1,271 ct. Inkoopvergoeding 2× bij salderen (jaarsaldering, niet gemodelleerd)."
     }
 }
