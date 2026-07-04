@@ -1,6 +1,6 @@
 {
     "$schema": "https://slimhuys.nl/schemas/dynamic-tariffs-nl/v2.json",
-    "generated_at": "2026-07-03T04:00:14+02:00",
+    "generated_at": "2026-07-04T04:00:13+02:00",
     "source_url": "https://slimhuys.nl/v1/suppliers",
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
