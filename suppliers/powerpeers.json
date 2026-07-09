@@ -5,21 +5,21 @@
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
     "supplier": {
-        "slug": "coolblue-energie",
-        "name": "Coolblue Energie",
+        "slug": "powerpeers",
+        "name": "Powerpeers",
         "active": true,
         "official_api": false,
-        "verified_at": "2025-12-17",
+        "verified_at": "2026-07-09",
         "sources": [
-            "https://docs.google.com/spreadsheets/d/1H0E8g6P-ydWYRYUAfELzpnIHBMqae3Ul8uNKU3d1s1Y"
+            "https://powerpeers.nl/energietarieven-voorwaarden/"
         ],
         "params": {
             "billing_resolution_minutes": 15,
-            "markup_eur_per_kwh": 0.02,
-            "monthly_fee_eur": 7.49,
+            "markup_eur_per_kwh": 0.01,
+            "monthly_fee_eur": 6.25,
             "monthly_fee_electricity_only_eur": null
         },
-        "default_gas_rate_eur_m3": null,
+        "default_gas_rate_eur_m3": 1.303,
         "pricing_spec": {
             "version": 1,
             "consumed": {
@@ -38,8 +38,8 @@
                     },
                     {
                         "op": "add",
-                        "value": 0.02,
-                        "label": "Coolblue Energie-handling-fee"
+                        "value": 0.01,
+                        "label": "Powerpeers-handling-fee"
                     }
                 ]
             },
@@ -48,8 +48,8 @@
                 "params": []
             }
         },
-        "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0200 — Coolblue Energie-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
-        "signup_url": "https://www.coolblue.nl/energiecontracten",
-        "notes": "Verified 2025-12-17 (community-sheet). Geen dynamisch gas. Saldering onbekend; TLV marktprijs ex BTW (rate-modellering benadering)."
+        "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0100 — Powerpeers-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
+        "signup_url": "https://www.powerpeers.nl",
+        "notes": "Reactivated 2026-07-09. Bronnen: powerpeers.nl tarievenpagina + ACM Monitor Consumentenmarkt Energie (opslag 0,008 ex btw ≈ €0,0100 incl.), gekruist met jeroen.nl. Vastrecht €6,25/mnd incl. btw, kwartier-facturering. Teruglevering = EPEX-marktprijs zonder terugleverkosten binnen saldeervolume (epex_passthrough); buiten saldeervolume 1 ct/kWh terugleverkosten (niet gemodelleerd). Saldering kWh-tegen-kWh t/m 2027. Gas = grijs variabel 1/1–30/6 2026 (~€1,303/m³ incl. btw)."
     }
 }
