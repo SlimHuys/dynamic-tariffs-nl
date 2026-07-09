@@ -1,6 +1,6 @@
 {
     "$schema": "https://slimhuys.nl/schemas/dynamic-tariffs-nl/v2.json",
-    "generated_at": "2026-07-09T04:00:09+02:00",
+    "generated_at": "2026-07-09T13:46:37+02:00",
     "source_url": "https://slimhuys.nl/v1/suppliers",
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
@@ -9,8 +9,9 @@
         "name": "NextEnergy",
         "active": true,
         "official_api": false,
-        "verified_at": "2025-12-17",
+        "verified_at": "2026-07-09",
         "sources": [
+            "https://www.nextenergy.nl/veelgestelde-vragen/wat-is-de-nextenergy-zonnebonus-precies",
             "https://docs.google.com/spreadsheets/d/1H0E8g6P-ydWYRYUAfELzpnIHBMqae3Ul8uNKU3d1s1Y"
         ],
         "params": {
@@ -44,12 +45,18 @@
                 ]
             },
             "delivered": {
-                "strategy": "epex_passthrough",
-                "params": []
+                "strategy": "feedin_saldering_bonus",
+                "params": {
+                    "bonus_pct": 0.5,
+                    "window_start_hour": 6,
+                    "window_end_hour": 22,
+                    "add_energy_tax": true,
+                    "annual_cap_kwh": 6000
+                }
             }
         },
-        "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0219 — NextEnergy-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
+        "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0219 — NextEnergy-handling-fee\n\n**Teruglevering (per kWh):**\n  binnen 06:00–22:00 & EPEX>0: (EPEX × 1,50 + Energiebelasting) × 1,21 (incl. btw); buiten venster: (max(0, EPEX) + Energiebelasting) × 1,21; bonus tot 6000 kWh/jaar",
         "signup_url": "https://nextenergy.nl",
-        "notes": "Verified 2025-12-17 (community-sheet). Inkoopvergoeding 2× bij salderen (niet gemodelleerd). TLV-formule onduidelijk."
+        "notes": "Verified 2026-07-09 (NextEnergy-klantenservice, per mail). Zonnebonus: 50% van kale EPEX indien positief én 06:00–22:00, cap 6000 kWh/contractjaar. Onder saldering verrekend met energiebelasting incl. btw. LET OP: energiebelasting-gross-up wijkt af van de andere salderende leveranciers in deze set (die tonen alleen EPEX×1,21) — bredere harmonisatie volgt apart. Per 1-1-2027 (einde saldering) vervalt de energiebelasting-verrekening: add_energy_tax dan op false."
     }
 }

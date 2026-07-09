@@ -1,6 +1,6 @@
 {
     "$schema": "https://slimhuys.nl/schemas/dynamic-tariffs-nl/v2.json",
-    "generated_at": "2026-07-09T04:00:09+02:00",
+    "generated_at": "2026-07-09T13:46:37+02:00",
     "source_url": "https://slimhuys.nl/v1/suppliers",
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
@@ -51,7 +51,7 @@
                 }
             }
         },
-        "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0339 — Hegg Energy-handling-fee\n\n**Teruglevering (per kWh):**\n  feedin_fixed (onbekende strategy — controleer spec)",
+        "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0339 — Hegg Energy-handling-fee\n\n**Teruglevering (per kWh):**\n  vaste TLV €0,0339 per kWh (incl. btw)",
         "signup_url": "https://hegg.energy/dynamisch-energiecontract",
         "notes": "Added 2026-05-23 (jeroen.nl + hegg.energy/support). Wederverkoper van EnergyZero, daarom kwartier-resolutie. Saldeert correct op jaarbasis; TLV = vast €0,0339/kWh incl. btw binnen saldeervolume, €0 buiten (saldering vervalt 2027). Relatief hoge opslag t.o.v. peers (~2 ct gemiddeld). Brand-color is placeholder (geen officiële brand-guide gevonden) — verifieer/update bij voorkeur."
     }
