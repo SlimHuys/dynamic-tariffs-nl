@@ -5,21 +5,21 @@
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
     "supplier": {
-        "slug": "pure-energie",
-        "name": "Pure Energie",
+        "slug": "energie-vanons",
+        "name": "Energie VanOns",
         "active": true,
         "official_api": false,
-        "verified_at": "2025-12-17",
+        "verified_at": "2026-07-13",
         "sources": [
-            "https://docs.google.com/spreadsheets/d/1H0E8g6P-ydWYRYUAfELzpnIHBMqae3Ul8uNKU3d1s1Y"
+            "https://jeroen.nl/dynamische-energie/aanbieders"
         ],
         "params": {
             "billing_resolution_minutes": 60,
-            "markup_eur_per_kwh": 0.02,
-            "monthly_fee_eur": 6.05,
+            "markup_eur_per_kwh": 0.029,
+            "monthly_fee_eur": 6.99,
             "monthly_fee_electricity_only_eur": null
         },
-        "default_gas_rate_eur_m3": 1.4,
+        "default_gas_rate_eur_m3": null,
         "pricing_spec": {
             "version": 1,
             "consumed": {
@@ -38,21 +38,21 @@
                     },
                     {
                         "op": "add",
-                        "value": 0.01999,
-                        "label": "Pure Energie-handling-fee"
+                        "value": 0.029,
+                        "label": "Energie VanOns-handling-fee"
                     }
                 ]
             },
             "delivered": {
                 "strategy": "feedin_market_minus",
                 "params": {
-                    "fee_eur_per_kwh": 0.059,
-                    "fee_includes_vat": false
+                    "fee_eur_per_kwh": 0.029,
+                    "fee_includes_vat": true
                 }
             }
         },
-        "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0200 — Pure Energie-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier − €0,0590 ex. btw) × 1,21 (incl. btw)",
-        "signup_url": null,
-        "notes": "Reactivated 2025-12-17 (community-sheet). Verkoopvergoeding 5,9 ct binnen én buiten saldeervolume; alternatief TLV marktprijs ex BTW − 5,9 ct (we kiezen markt-min-aanpak als conservatief bovengrens)."
+        "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0290 — Energie VanOns-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier − €0,0290 incl. btw) × 1,21 (incl. btw)",
+        "signup_url": "https://energie.vanons.org/dynamisch-contract/",
+        "notes": "Added 2026-07-13 (jeroen.nl + energie.vanons.org). Zelfstandige coöperatie (GEEN EnergyZero-reseller), uur-resolutie. TLV = marktprijs − 2,90 ct (feedin_market_minus; jeroen geeft binnen én buiten saldering gelijk). Gas-opslag onbekend → gas null. Brand-color placeholder — verifieer."
     }
 }

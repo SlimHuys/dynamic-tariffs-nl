@@ -5,25 +5,25 @@
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
     "supplier": {
-        "slug": "anwb-energie",
-        "name": "ANWB Energie",
+        "slug": "zondergas",
+        "name": "ZonderGas",
         "active": true,
         "official_api": false,
-        "verified_at": "2025-12-17",
+        "verified_at": "2026-07-13",
         "sources": [
-            "https://docs.google.com/spreadsheets/d/1H0E8g6P-ydWYRYUAfELzpnIHBMqae3Ul8uNKU3d1s1Y"
+            "https://eerlijkverbruik.nl/energie/zondergas"
         ],
         "params": {
-            "billing_resolution_minutes": 60,
-            "markup_eur_per_kwh": 0.02,
-            "monthly_fee_eur": 7,
+            "billing_resolution_minutes": 15,
+            "markup_eur_per_kwh": 0.034,
+            "monthly_fee_eur": 6.49,
             "monthly_fee_electricity_only_eur": null
         },
-        "default_gas_rate_eur_m3": 1.42,
+        "default_gas_rate_eur_m3": null,
         "pricing_spec": {
             "version": 1,
             "consumed": {
-                "epex": "hour",
+                "epex": "quarter",
                 "pipeline": [
                     {
                         "op": "add",
@@ -38,8 +38,8 @@
                     },
                     {
                         "op": "add",
-                        "value": 0.02,
-                        "label": "ANWB Energie-handling-fee"
+                        "value": 0.034,
+                        "label": "ZonderGas-handling-fee"
                     }
                 ]
             },
@@ -48,8 +48,8 @@
                 "params": []
             }
         },
-        "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0200 — ANWB Energie-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
-        "signup_url": "https://www.anwb.nl/energie",
-        "notes": "Verified 2025-12-17 (community-sheet). Saldering en TLV onbekend — passthrough als fallback."
+        "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0340 — ZonderGas-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
+        "signup_url": "https://www.zondergas.nl/",
+        "notes": "Added 2026-07-13 (eerlijkverbruik.nl). Wederverkoper van EnergyZero (white-label), daarom kwartier-resolutie. Opslag 3,4 ct / vast €6,49 incl btw. TLV niet apart gepubliceerd → EnergyZero-default epex_passthrough (marktprijs incl btw, saldeert) aangenomen — verifieer. Brand-color placeholder — verifieer."
     }
 }

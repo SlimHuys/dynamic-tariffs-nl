@@ -5,18 +5,18 @@
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
     "supplier": {
-        "slug": "coolblue-energie",
-        "name": "Coolblue Energie",
+        "slug": "groenestroomlokaal",
+        "name": "GroeneStroomLokaal",
         "active": true,
         "official_api": false,
-        "verified_at": "2025-12-17",
+        "verified_at": "2026-07-13",
         "sources": [
-            "https://docs.google.com/spreadsheets/d/1H0E8g6P-ydWYRYUAfELzpnIHBMqae3Ul8uNKU3d1s1Y"
+            "https://www.overstappen.nl/energie/leveranciers/groenestroomlokaal/"
         ],
         "params": {
             "billing_resolution_minutes": 15,
-            "markup_eur_per_kwh": 0.02,
-            "monthly_fee_eur": 7.49,
+            "markup_eur_per_kwh": 0.0339,
+            "monthly_fee_eur": 5,
             "monthly_fee_electricity_only_eur": null
         },
         "default_gas_rate_eur_m3": null,
@@ -38,8 +38,8 @@
                     },
                     {
                         "op": "add",
-                        "value": 0.02,
-                        "label": "Coolblue Energie-handling-fee"
+                        "value": 0.03388,
+                        "label": "GroeneStroomLokaal-handling-fee"
                     }
                 ]
             },
@@ -48,8 +48,8 @@
                 "params": []
             }
         },
-        "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0200 — Coolblue Energie-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
-        "signup_url": "https://www.coolblue.nl/energiecontracten",
-        "notes": "Verified 2025-12-17 (community-sheet). Geen dynamisch gas. Saldering onbekend; TLV marktprijs ex BTW (rate-modellering benadering)."
+        "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0339 — GroeneStroomLokaal-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
+        "signup_url": "https://www.groenestroomlokaal.nl/",
+        "notes": "Added 2026-07-13 (overstappen.nl + easyswitch.nl). Wederverkoper van EnergyZero, daarom kwartier-resolutie. Opslag 3,388 ct = EnergyZero's pre-15-4-2026-tarief (nog niet meegezakt). TLV spot-gekoppeld incl btw, geen vaste terugleverkosten → epex_passthrough (saldeert op jaarbasis). Dynergie noemde 2 ct excl btw; overstappen/easyswitch 3,388 ct incl btw aangehouden. Brand-color placeholder — verifieer."
     }
 }
