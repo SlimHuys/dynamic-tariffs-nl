@@ -31,4 +31,4 @@ PR's op individuele leveranciers welkom — bewerk het JSON-bestand in deze map.
 | [`vattenfall`](vattenfall.json) | Vattenfall | 0.0255 | 7.95 | 60 min | — |
 | [`vrijopnaam`](vrijopnaam.json) | Vrijopnaam | 0.0175 | 8.00 | 60 min | 1.350 |
 | [`zondergas`](zondergas.json) | ZonderGas | 0.0340 | 6.49 | 15 min | — |
-| [`zonneplan`](zonneplan.json) | Zonneplan | 0.0200 | 6.25 | 60 min | 1.501 |
+| [`zonneplan`](zonneplan.json) | Zonneplan | 0.0200 | 6.25 | 60 min | 1.513 |
