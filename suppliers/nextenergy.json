@@ -1,6 +1,6 @@
 {
     "$schema": "https://slimhuys.nl/schemas/dynamic-tariffs-nl/v2.json",
-    "generated_at": "2026-07-29T04:00:08+02:00",
+    "generated_at": "2026-07-30T04:00:08+02:00",
     "source_url": "https://slimhuys.nl/v1/suppliers",
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
@@ -9,6 +9,7 @@
         "name": "NextEnergy",
         "active": true,
         "official_api": false,
+        "effective_from": "2018-01-01",
         "verified_at": "2026-07-09",
         "sources": [
             "https://www.nextenergy.nl/veelgestelde-vragen/wat-is-de-nextenergy-zonnebonus-precies",
@@ -57,6 +58,7 @@
         },
         "formula": "**Afnemen (per kWh):**\n  EPEX-uurprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0219 — NextEnergy-handling-fee\n\n**Teruglevering (per kWh):**\n  binnen 06:00–22:00 & EPEX>0: (EPEX × 1,50 + Energiebelasting) × 1,21 (incl. btw); buiten venster: (max(0, EPEX) + Energiebelasting) × 1,21; bonus tot 6000 kWh/jaar",
         "signup_url": "https://nextenergy.nl",
-        "notes": "Verified 2026-07-09 (NextEnergy-klantenservice, per mail). Zonnebonus: 50% van kale EPEX indien positief én 06:00–22:00, cap 6000 kWh/contractjaar. Onder saldering verrekend met energiebelasting incl. btw. LET OP: energiebelasting-gross-up wijkt af van de andere salderende leveranciers in deze set (die tonen alleen EPEX×1,21) — bredere harmonisatie volgt apart. Per 1-1-2027 (einde saldering) vervalt de energiebelasting-verrekening: add_energy_tax dan op false."
+        "notes": "Verified 2026-07-09 (NextEnergy-klantenservice, per mail). Zonnebonus: 50% van kale EPEX indien positief én 06:00–22:00, cap 6000 kWh/contractjaar. Onder saldering verrekend met energiebelasting incl. btw. LET OP: energiebelasting-gross-up wijkt af van de andere salderende leveranciers in deze set (die tonen alleen EPEX×1,21) — bredere harmonisatie volgt apart. Per 1-1-2027 (einde saldering) vervalt de energiebelasting-verrekening: add_energy_tax dan op false.",
+        "history": []
     }
 }
