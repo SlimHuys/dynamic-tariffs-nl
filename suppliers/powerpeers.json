@@ -1,6 +1,6 @@
 {
     "$schema": "https://slimhuys.nl/schemas/dynamic-tariffs-nl/v2.json",
-    "generated_at": "2026-09-20T04:00:09+02:00",
+    "generated_at": "2026-09-20T09:08:13+02:00",
     "source_url": "https://slimhuys.nl/v1/suppliers",
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
@@ -9,10 +9,12 @@
         "name": "Powerpeers",
         "active": true,
         "official_api": false,
-        "effective_from": "2018-01-01",
-        "verified_at": "2026-07-09",
+        "effective_from": "2026-09-20",
+        "verified_at": "2026-09-20",
         "sources": [
-            "https://powerpeers.nl/energietarieven-voorwaarden/"
+            "https://powerpeers.eu/assets/website/uploads/Powerpeers-contractvoorwaarden_Dynamisch_Stroom.pdf",
+            "https://powerpeers.nl/energietarieven-voorwaarden/",
+            "https://powerpeers.nl/dynamische-energie/energieprijzen-dynamisch-energiecontract/"
         ],
         "params": {
             "billing_resolution_minutes": 15,
@@ -20,7 +22,7 @@
             "monthly_fee_eur": 6.25,
             "monthly_fee_electricity_only_eur": null
         },
-        "default_gas_rate_eur_m3": 1.303,
+        "default_gas_rate_eur_m3": 1.7462,
         "pricing_spec": {
             "version": 1,
             "consumed": {
@@ -45,16 +47,27 @@
                 ]
             },
             "delivered": {
-                "strategy": "feedin_export_surplus_fee",
+                "strategy": "feedin_market_minus",
                 "params": {
-                    "surplus_fee_eur_per_kwh": 0.01,
-                    "surplus_fee_includes_vat": true
+                    "fee_eur_per_kwh": 0.01,
+                    "fee_includes_vat": true
                 }
             }
         },
-        "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0100 — Powerpeers-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw); plus €0,0100/kWh terugleverkosten (incl. btw) op teruglevering buiten saldeervolume (jaarlijkse export boven verbruik)",
-        "signup_url": "https://www.powerpeers.nl",
-        "notes": "Reactivated 2026-07-09. Bronnen: powerpeers.nl tarievenpagina + ACM Monitor Consumentenmarkt Energie (opslag 0,008 ex btw ≈ €0,0100 incl.), gekruist met jeroen.nl. Vastrecht €6,25/mnd incl. btw, kwartier-facturering. Teruglevering = EPEX-marktprijs zonder terugleverkosten binnen saldeervolume; buiten saldeervolume €0,01/kWh terugleverkosten (feedin_export_surplus_fee, op export boven verbruik). Saldering kWh-tegen-kWh t/m 2027. Gas = grijs variabel 1/1–30/6 2026 (~€1,303/m³ incl. btw).",
-        "history": []
+        "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0100 — Powerpeers-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier − €0,0100 incl. btw) × 1,21 (incl. btw)",
+        "signup_url": "https://powerpeers.nl/dynamische-energie/helemaal-dynamisch-energiecontract/",
+        "notes": "Herverifieerd 2026-09-20 tegen de Productvoorwaarden Dynamisch Elektriciteit (versie 1-1-2026) + powerpeers.nl. Inkoopvergoeding €0,0100/kWh incl. btw, vastrecht €0,205479/dag = €6,25/mnd incl. btw (stroom én gas gelijk), kwartier-facturering. Teruglevering = EPEX-kwartierprijs min de verkoopvergoeding van €0,01/kWh incl. btw over ELKE teruggeleverde kWh, ook binnen het saldeervolume (art. 10.2) — vandaar feedin_market_minus i.p.v. het eerdere feedin_export_surplus_fee. Gas = dynamisch dagtarief 06:00–06:00; gas:fetch-powerpeers houdt default_gas_rate_eur_m3 bij.",
+        "history": [
+            {
+                "effective_from": "2018-01-01",
+                "params": {
+                    "billing_resolution_minutes": 15,
+                    "markup_eur_per_kwh": 0.01,
+                    "monthly_fee_eur": 6.25,
+                    "monthly_fee_electricity_only_eur": null
+                },
+                "default_gas_rate_eur_m3": 1.303
+            }
+        ]
     }
 }

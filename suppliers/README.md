@@ -22,7 +22,7 @@ PR's op individuele leveranciers welkom — bewerk het JSON-bestand in deze map.
 | [`hegg-energy`](hegg-energy.json) | Hegg Energy | 0.0339 | 7.50 | 15 min | — |
 | [`innova`](innova.json) | Innova | 0.0251 | 7.96 | 60 min | — |
 | [`nextenergy`](nextenergy.json) | NextEnergy | 0.0219 | 5.99 | 60 min | 1.180 |
-| [`powerpeers`](powerpeers.json) | Powerpeers | 0.0100 | 6.25 | 15 min | 1.303 |
+| [`powerpeers`](powerpeers.json) | Powerpeers | 0.0100 | 6.25 | 15 min | 1.746 |
 | [`pure-energie`](pure-energie.json) | Pure Energie | 0.0200 | 6.05 | 60 min | 1.400 |
 | [`quatt`](quatt.json) | Quatt | 0.0182 | 7.50 | 60 min | — |
 | [`samsam`](samsam.json) | SamSam | 0.0339 | 7.99 | 15 min | — |
@@ -31,4 +31,4 @@ PR's op individuele leveranciers welkom — bewerk het JSON-bestand in deze map.
 | [`vattenfall`](vattenfall.json) | Vattenfall | 0.0255 | 7.95 | 60 min | — |
 | [`vrijopnaam`](vrijopnaam.json) | Vrijopnaam | 0.0175 | 8.00 | 60 min | 1.350 |
 | [`zondergas`](zondergas.json) | ZonderGas | 0.0340 | 6.49 | 15 min | — |
-| [`zonneplan`](zonneplan.json) | Zonneplan | 0.0200 | 6.25 | 15 min | 1.721 |
+| [`zonneplan`](zonneplan.json) | Zonneplan | 0.0200 | 6.25 | 15 min | 1.740 |
