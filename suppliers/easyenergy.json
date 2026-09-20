@@ -1,6 +1,6 @@
 {
     "$schema": "https://slimhuys.nl/schemas/dynamic-tariffs-nl/v2.json",
-    "generated_at": "2026-09-20T09:08:13+02:00",
+    "generated_at": "2026-09-20T09:48:58+02:00",
     "source_url": "https://slimhuys.nl/v1/suppliers",
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
@@ -9,7 +9,7 @@
         "name": "easyEnergy",
         "active": true,
         "official_api": false,
-        "effective_from": "2018-01-01",
+        "effective_from": "2026-09-20",
         "verified_at": "2025-12-17",
         "sources": [
             "https://docs.google.com/spreadsheets/d/1H0E8g6P-ydWYRYUAfELzpnIHBMqae3Ul8uNKU3d1s1Y"
@@ -20,7 +20,8 @@
             "monthly_fee_eur": 7,
             "monthly_fee_electricity_only_eur": null
         },
-        "default_gas_rate_eur_m3": 1.05,
+        "default_gas_rate_eur_m3": 1.7431,
+        "gas_markup_eur_per_m3": 0.079,
         "pricing_spec": {
             "version": 1,
             "consumed": {
@@ -55,6 +56,17 @@
         "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0218 — easyEnergy-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier − €0,0121 incl. btw) × 1,21 (incl. btw)",
         "signup_url": "https://www.easyenergy.com",
         "notes": "Verified 2025-12-17 (community-sheet). Saldeert per maand i.p.v. jaar (niet gemodelleerd). Terugleveropslag 1,21 ct/kWh ook binnen saldeervolume.",
-        "history": []
+        "history": [
+            {
+                "effective_from": "2018-01-01",
+                "params": {
+                    "billing_resolution_minutes": 15,
+                    "markup_eur_per_kwh": 0.0218,
+                    "monthly_fee_eur": 7,
+                    "monthly_fee_electricity_only_eur": null
+                },
+                "default_gas_rate_eur_m3": 1.05
+            }
+        ]
     }
 }
