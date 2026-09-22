@@ -1,6 +1,6 @@
 {
     "$schema": "https://slimhuys.nl/schemas/dynamic-tariffs-nl/v2.json",
-    "generated_at": "2026-09-21T04:00:10+02:00",
+    "generated_at": "2026-09-22T04:00:10+02:00",
     "source_url": "https://slimhuys.nl/v1/suppliers",
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
@@ -9,7 +9,7 @@
         "name": "Powerpeers",
         "active": true,
         "official_api": false,
-        "effective_from": "2026-09-20",
+        "effective_from": "2026-09-21",
         "verified_at": "2026-09-20",
         "sources": [
             "https://powerpeers.eu/assets/website/uploads/Powerpeers-contractvoorwaarden_Dynamisch_Stroom.pdf",
@@ -22,7 +22,7 @@
             "monthly_fee_eur": 6.25,
             "monthly_fee_electricity_only_eur": null
         },
-        "default_gas_rate_eur_m3": 1.7462,
+        "default_gas_rate_eur_m3": 1.7484,
         "gas_markup_eur_per_m3": 0.0821,
         "pricing_spec": {
             "version": 1,
@@ -68,6 +68,16 @@
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.303
+            },
+            {
+                "effective_from": "2026-09-20",
+                "params": {
+                    "billing_resolution_minutes": 15,
+                    "markup_eur_per_kwh": 0.01,
+                    "monthly_fee_eur": 6.25,
+                    "monthly_fee_electricity_only_eur": null
+                },
+                "default_gas_rate_eur_m3": 1.7462
             }
         ]
     }
