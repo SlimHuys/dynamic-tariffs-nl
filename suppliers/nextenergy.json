@@ -1,6 +1,6 @@
 {
     "$schema": "https://slimhuys.nl/schemas/dynamic-tariffs-nl/v2.json",
-    "generated_at": "2026-09-22T04:00:10+02:00",
+    "generated_at": "2026-09-23T04:00:11+02:00",
     "source_url": "https://slimhuys.nl/v1/suppliers",
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
@@ -9,7 +9,7 @@
         "name": "NextEnergy",
         "active": true,
         "official_api": false,
-        "effective_from": "2026-09-21",
+        "effective_from": "2026-09-22",
         "verified_at": "2026-07-09",
         "sources": [
             "https://www.nextenergy.nl/veelgestelde-vragen/wat-is-de-nextenergy-zonnebonus-precies",
@@ -21,7 +21,7 @@
             "monthly_fee_eur": 5.99,
             "monthly_fee_electricity_only_eur": null
         },
-        "default_gas_rate_eur_m3": 1.7462,
+        "default_gas_rate_eur_m3": 1.6808,
         "gas_markup_eur_per_m3": 0.0799,
         "pricing_spec": {
             "version": 1,
@@ -80,6 +80,16 @@
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.744
+            },
+            {
+                "effective_from": "2026-09-21",
+                "params": {
+                    "billing_resolution_minutes": 60,
+                    "markup_eur_per_kwh": 0.0219,
+                    "monthly_fee_eur": 5.99,
+                    "monthly_fee_electricity_only_eur": null
+                },
+                "default_gas_rate_eur_m3": 1.7462
             }
         ]
     }
