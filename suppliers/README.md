@@ -5,30 +5,30 @@ PR's op individuele leveranciers welkom — bewerk het JSON-bestand in deze map.
 
 | Slug | Naam | Markup €/kWh | Maandfee € | Resolutie | Gas €/m³ |
 |------|------|-------------:|-----------:|----------:|---------:|
-| [`anwb-energie`](anwb-energie.json) | ANWB Energie | 0.0200 | 7.00 | 60 min | 1.646 |
-| [`budget-energie`](budget-energie.json) | Budget Energie | 0.0168 | 5.99 | 60 min | 1.651 |
+| [`anwb-energie`](anwb-energie.json) | ANWB Energie | 0.0200 | 7.00 | 60 min | 1.685 |
+| [`budget-energie`](budget-energie.json) | Budget Energie | 0.0168 | 5.99 | 60 min | 1.690 |
 | [`clean-energy`](clean-energy.json) | Clean Energy | 0.0182 | 6.05 | 60 min | — |
 | [`coolblue-energie`](coolblue-energie.json) | Coolblue Energie | 0.0200 | 7.49 | 15 min | — |
-| [`easyenergy`](easyenergy.json) | easyEnergy | 0.0218 | 7.00 | 15 min | 1.666 |
-| [`eneco`](eneco.json) | Eneco | 0.0226 | 7.00 | 60 min | 1.687 |
+| [`easyenergy`](easyenergy.json) | easyEnergy | 0.0218 | 7.00 | 15 min | 1.705 |
+| [`eneco`](eneco.json) | Eneco | 0.0226 | 7.00 | 60 min | 1.725 |
 | [`energie-vanons`](energie-vanons.json) | Energie VanOns | 0.0290 | 6.99 | 60 min | — |
 | [`energiedirect`](energiedirect.json) | Energiedirect | 0.0205 | 6.99 | 60 min | — |
 | [`energiek`](energiek.json) | Energiek | 0.0180 | 5.99 | 60 min | — |
-| [`energyzero`](energyzero.json) | EnergyZero | 0.0224 | 12.10 | 15 min | 1.662 |
+| [`energyzero`](energyzero.json) | EnergyZero | 0.0224 | 12.10 | 15 min | 1.701 |
 | [`essent`](essent.json) | Essent | 0.0253 | 7.49 | 60 min | — |
-| [`frank-energie`](frank-energie.json) | Frank Energie | 0.0182 | 7.00 | 15 min | 1.667 |
-| [`frank-energie-uur`](frank-energie-uur.json) | Frank Energie (uur) | 0.0182 | 7.00 | 60 min | 1.667 |
+| [`frank-energie`](frank-energie.json) | Frank Energie | 0.0182 | 7.00 | 15 min | 1.706 |
+| [`frank-energie-uur`](frank-energie-uur.json) | Frank Energie (uur) | 0.0182 | 7.00 | 60 min | 1.706 |
 | [`groenestroomlokaal`](groenestroomlokaal.json) | GroeneStroomLokaal | 0.0339 | 5.00 | 15 min | — |
 | [`hegg-energy`](hegg-energy.json) | Hegg Energy | 0.0339 | 7.50 | 15 min | — |
 | [`innova`](innova.json) | Innova | 0.0251 | 7.96 | 60 min | — |
-| [`nextenergy`](nextenergy.json) | NextEnergy | 0.0219 | 5.99 | 60 min | 1.667 |
-| [`powerpeers`](powerpeers.json) | Powerpeers | 0.0100 | 6.25 | 15 min | 1.669 |
-| [`pure-energie`](pure-energie.json) | Pure Energie | 0.0200 | 6.05 | 60 min | 1.686 |
+| [`nextenergy`](nextenergy.json) | NextEnergy | 0.0219 | 5.99 | 60 min | 1.706 |
+| [`powerpeers`](powerpeers.json) | Powerpeers | 0.0100 | 6.25 | 15 min | 1.708 |
+| [`pure-energie`](pure-energie.json) | Pure Energie | 0.0200 | 6.05 | 60 min | 1.725 |
 | [`quatt`](quatt.json) | Quatt | 0.0182 | 7.50 | 60 min | — |
 | [`samsam`](samsam.json) | SamSam | 0.0339 | 7.99 | 15 min | — |
-| [`tibber`](tibber.json) | Tibber | 0.0248 | 5.99 | 15 min | 1.662 |
-| [`vandebron`](vandebron.json) | Vandebron | 0.0257 | 7.00 | 60 min | 1.694 |
+| [`tibber`](tibber.json) | Tibber | 0.0248 | 5.99 | 15 min | 1.701 |
+| [`vandebron`](vandebron.json) | Vandebron | 0.0257 | 7.00 | 60 min | 1.732 |
 | [`vattenfall`](vattenfall.json) | Vattenfall | 0.0255 | 7.95 | 60 min | — |
-| [`vrijopnaam`](vrijopnaam.json) | Vrijopnaam | 0.0175 | 8.00 | 60 min | 1.667 |
+| [`vrijopnaam`](vrijopnaam.json) | Vrijopnaam | 0.0175 | 8.00 | 60 min | 1.706 |
 | [`zondergas`](zondergas.json) | ZonderGas | 0.0340 | 6.49 | 15 min | — |
-| [`zonneplan`](zonneplan.json) | Zonneplan | 0.0200 | 6.25 | 15 min | 1.673 |
+| [`zonneplan`](zonneplan.json) | Zonneplan | 0.0200 | 6.25 | 15 min | 1.696 |
