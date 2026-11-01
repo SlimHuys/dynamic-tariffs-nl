@@ -1,6 +1,6 @@
 {
     "$schema": "https://slimhuys.nl/schemas/dynamic-tariffs-nl/v2.json",
-    "generated_at": "2026-10-31T04:00:09+01:00",
+    "generated_at": "2026-11-01T04:00:10+01:00",
     "source_url": "https://slimhuys.nl/v1/suppliers",
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
@@ -9,9 +9,10 @@
         "name": "Tibber",
         "active": true,
         "official_api": true,
-        "effective_from": "2026-10-30",
-        "verified_at": "2025-12-17",
+        "effective_from": "2026-10-31",
+        "verified_at": "2026-10-31",
         "sources": [
+            "https://tibber.com/nl/store/produkt/dynamische-prijzen",
             "https://docs.google.com/spreadsheets/d/1H0E8g6P-ydWYRYUAfELzpnIHBMqae3Ul8uNKU3d1s1Y"
         ],
         "params": {
@@ -20,7 +21,7 @@
             "monthly_fee_eur": 5.99,
             "monthly_fee_electricity_only_eur": null
         },
-        "default_gas_rate_eur_m3": 1.9802,
+        "default_gas_rate_eur_m3": 2.0451,
         "gas_markup_eur_per_m3": 0.0749,
         "pricing_spec": {
             "version": 1,
@@ -46,16 +47,13 @@
                 ]
             },
             "delivered": {
-                "strategy": "feedin_fixed",
-                "params": {
-                    "rate_eur_per_kwh": 0.0248,
-                    "rate_includes_vat": true
-                }
+                "strategy": "epex_passthrough",
+                "params": []
             }
         },
-        "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0248 — Tibber-handling-fee\n\n**Teruglevering (per kWh):**\n  vaste TLV €0,0248 per kWh (incl. btw)",
+        "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0248 — Tibber-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
         "signup_url": "https://tibber.com/nl",
-        "notes": "Verified 2025-12-17 (community-sheet). TLV vast 2,48 ct/kWh (gas via EnergyZero, 7,495 ct opslag). Officiële GraphQL-API.",
+        "notes": "Gecorrigeerd 2026-10-31 tegen een klantfactuur aug-2026. Teruglevering = beursprijs incl. btw: de verkoopvergoeding (2,05 ct ex. btw, sinds 1-1-2026) en de teruggegeven inkoopvergoeding (2,05 ct ex. btw, gesaldeerd) heffen elkaar op binnen het saldeervolume. Over een jaaroverschot gaat 2,48 ct incl. btw af (niet gemodelleerd). Per 1-1-2027 vervallen beide: kale beursprijs. Gas via EnergyZero, 7,495 ct opslag. Officiële GraphQL-API.",
         "history": [
             {
                 "effective_from": "2018-01-01",
@@ -416,6 +414,16 @@
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 2.0115
+            },
+            {
+                "effective_from": "2026-10-30",
+                "params": {
+                    "billing_resolution_minutes": 15,
+                    "markup_eur_per_kwh": 0.0248,
+                    "monthly_fee_eur": 5.99,
+                    "monthly_fee_electricity_only_eur": null
+                },
+                "default_gas_rate_eur_m3": 1.9802
             }
         ]
     }
