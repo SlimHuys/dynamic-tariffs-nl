@@ -1,6 +1,6 @@
 {
     "$schema": "https://slimhuys.nl/schemas/dynamic-tariffs-nl/v2.json",
-    "generated_at": "2026-11-27T04:00:09+01:00",
+    "generated_at": "2026-11-28T04:00:10+01:00",
     "source_url": "https://slimhuys.nl/v1/suppliers",
     "license": "CC-BY-4.0",
     "maintainer": "SlimHuys (https://slimhuys.nl)",
@@ -9,19 +9,19 @@
         "name": "Tibber",
         "active": true,
         "official_api": true,
-        "effective_from": "2026-11-26",
-        "verified_at": "2026-10-31",
+        "effective_from": "2026-11-27",
+        "verified_at": "2026-11-27",
         "sources": [
-            "https://tibber.com/nl/store/produkt/dynamische-prijzen",
+            "https://tibber.com/nl/energiecontract",
             "https://docs.google.com/spreadsheets/d/1H0E8g6P-ydWYRYUAfELzpnIHBMqae3Ul8uNKU3d1s1Y"
         ],
         "params": {
             "billing_resolution_minutes": 15,
-            "markup_eur_per_kwh": 0.0248,
-            "monthly_fee_eur": 5.99,
+            "markup_eur_per_kwh": 0.018,
+            "monthly_fee_eur": 6.99,
             "monthly_fee_electricity_only_eur": null
         },
-        "default_gas_rate_eur_m3": 1.8394,
+        "default_gas_rate_eur_m3": 1.8476,
         "gas_markup_eur_per_m3": 0.0749,
         "pricing_spec": {
             "version": 1,
@@ -41,7 +41,7 @@
                     },
                     {
                         "op": "add",
-                        "value": 0.0248,
+                        "value": 0.018,
                         "label": "Tibber-handling-fee"
                     }
                 ]
@@ -51,9 +51,9 @@
                 "params": []
             }
         },
-        "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0248 — Tibber-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
+        "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0180 — Tibber-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier) × 1,21 (incl. btw)",
         "signup_url": "https://tibber.com/nl",
-        "notes": "Gecorrigeerd 2026-10-31 tegen een klantfactuur aug-2026. Teruglevering = beursprijs incl. btw: de verkoopvergoeding (2,05 ct ex. btw, sinds 1-1-2026) en de teruggegeven inkoopvergoeding (2,05 ct ex. btw, gesaldeerd) heffen elkaar op binnen het saldeervolume. Over een jaaroverschot gaat 2,48 ct incl. btw af (niet gemodelleerd). Per 1-1-2027 vervallen beide: kale beursprijs. Gas via EnergyZero, 7,495 ct opslag. Officiële GraphQL-API.",
+        "notes": "Nieuwe prijsstructuur per 1-9-2026 (nagekeken 2026-11-27 op tibber.com/nl/energiecontract): vastrecht stroom €6,99/mnd, inkoopvergoeding €0,0180/kWh incl. btw, verkoopvergoeding €0,0180/kWh incl. btw tot 1-1-2027, gas-inkoopvergoeding €0,08835/m³. Geldt voor nieuwe klanten; bestaande klanten op aanvraag (vanaf ~1.800 kWh/jaar voordeliger) — wie nog op de oude structuur (€5,99 + €0,0248) zit, zet dat als eigen tarief op z'n contract. Teruglevering = beursprijs incl. btw: in- en verkoopvergoeding heffen elkaar op binnen het saldeervolume. Per 1-1-2027 vervallen beide. Officiële GraphQL-API.",
         "history": [
             {
                 "effective_from": "2018-01-01",
@@ -66,11 +66,21 @@
                 "default_gas_rate_eur_m3": 1.05
             },
             {
+                "effective_from": "2026-09-01",
+                "params": {
+                    "billing_resolution_minutes": 15,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
+                    "monthly_fee_electricity_only_eur": null
+                },
+                "default_gas_rate_eur_m3": 1.05
+            },
+            {
                 "effective_from": "2026-09-20",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.739
@@ -79,8 +89,8 @@
                 "effective_from": "2026-09-21",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.7412
@@ -89,8 +99,8 @@
                 "effective_from": "2026-09-22",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.6758
@@ -99,8 +109,8 @@
                 "effective_from": "2026-09-23",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.6815
@@ -109,8 +119,8 @@
                 "effective_from": "2026-09-24",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.662
@@ -119,8 +129,8 @@
                 "effective_from": "2026-09-25",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.7005
@@ -129,8 +139,8 @@
                 "effective_from": "2026-09-26",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.6474
@@ -139,8 +149,8 @@
                 "effective_from": "2026-09-28",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.6475
@@ -149,8 +159,8 @@
                 "effective_from": "2026-09-29",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.6708
@@ -159,8 +169,8 @@
                 "effective_from": "2026-09-30",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.6192
@@ -169,8 +179,8 @@
                 "effective_from": "2026-10-01",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.6739
@@ -179,8 +189,8 @@
                 "effective_from": "2026-10-02",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.6751
@@ -189,8 +199,8 @@
                 "effective_from": "2026-10-03",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.6874
@@ -199,8 +209,8 @@
                 "effective_from": "2026-10-05",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.6886
@@ -209,8 +219,8 @@
                 "effective_from": "2026-10-06",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.6737
@@ -219,8 +229,8 @@
                 "effective_from": "2026-10-07",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.6923
@@ -229,8 +239,8 @@
                 "effective_from": "2026-10-08",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.7313
@@ -239,8 +249,8 @@
                 "effective_from": "2026-10-09",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.7331
@@ -249,8 +259,8 @@
                 "effective_from": "2026-10-10",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.7697
@@ -259,8 +269,8 @@
                 "effective_from": "2026-10-12",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.7754
@@ -269,8 +279,8 @@
                 "effective_from": "2026-10-13",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8001
@@ -279,8 +289,8 @@
                 "effective_from": "2026-10-14",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8374
@@ -289,8 +299,8 @@
                 "effective_from": "2026-10-15",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8293
@@ -299,8 +309,8 @@
                 "effective_from": "2026-10-16",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8309
@@ -309,8 +319,8 @@
                 "effective_from": "2026-10-17",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8441
@@ -319,8 +329,8 @@
                 "effective_from": "2026-10-19",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8472
@@ -329,8 +339,8 @@
                 "effective_from": "2026-10-20",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8521
@@ -339,8 +349,8 @@
                 "effective_from": "2026-10-21",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8287
@@ -349,8 +359,8 @@
                 "effective_from": "2026-10-22",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8484
@@ -359,8 +369,8 @@
                 "effective_from": "2026-10-23",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8702
@@ -369,8 +379,8 @@
                 "effective_from": "2026-10-24",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.9002
@@ -379,8 +389,8 @@
                 "effective_from": "2026-10-26",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.9027
@@ -389,8 +399,8 @@
                 "effective_from": "2026-10-27",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.9576
@@ -399,8 +409,8 @@
                 "effective_from": "2026-10-28",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.9519
@@ -409,8 +419,8 @@
                 "effective_from": "2026-10-29",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 2.0115
@@ -419,8 +429,8 @@
                 "effective_from": "2026-10-30",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.9802
@@ -429,8 +439,8 @@
                 "effective_from": "2026-10-31",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 2.0451
@@ -439,8 +449,8 @@
                 "effective_from": "2026-11-02",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 2.0453
@@ -449,8 +459,8 @@
                 "effective_from": "2026-11-03",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.9208
@@ -459,8 +469,8 @@
                 "effective_from": "2026-11-04",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8936
@@ -469,8 +479,8 @@
                 "effective_from": "2026-11-05",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.842
@@ -479,8 +489,8 @@
                 "effective_from": "2026-11-06",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8684
@@ -489,8 +499,8 @@
                 "effective_from": "2026-11-07",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8229
@@ -499,8 +509,8 @@
                 "effective_from": "2026-11-09",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8239
@@ -509,8 +519,8 @@
                 "effective_from": "2026-11-10",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.7779
@@ -519,8 +529,8 @@
                 "effective_from": "2026-11-11",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8166
@@ -529,8 +539,8 @@
                 "effective_from": "2026-11-12",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8235
@@ -539,8 +549,8 @@
                 "effective_from": "2026-11-13",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8949
@@ -549,8 +559,8 @@
                 "effective_from": "2026-11-14",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8729
@@ -559,8 +569,8 @@
                 "effective_from": "2026-11-16",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.872
@@ -569,8 +579,8 @@
                 "effective_from": "2026-11-17",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.7924
@@ -579,8 +589,8 @@
                 "effective_from": "2026-11-18",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.7977
@@ -589,8 +599,8 @@
                 "effective_from": "2026-11-20",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8088
@@ -599,8 +609,8 @@
                 "effective_from": "2026-11-21",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8442
@@ -609,8 +619,8 @@
                 "effective_from": "2026-11-23",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8494
@@ -619,8 +629,8 @@
                 "effective_from": "2026-11-24",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8771
@@ -629,11 +639,21 @@
                 "effective_from": "2026-11-25",
                 "params": {
                     "billing_resolution_minutes": 15,
-                    "markup_eur_per_kwh": 0.0248,
-                    "monthly_fee_eur": 5.99,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
                     "monthly_fee_electricity_only_eur": null
                 },
                 "default_gas_rate_eur_m3": 1.8974
+            },
+            {
+                "effective_from": "2026-11-26",
+                "params": {
+                    "billing_resolution_minutes": 15,
+                    "markup_eur_per_kwh": 0.018,
+                    "monthly_fee_eur": 6.99,
+                    "monthly_fee_electricity_only_eur": null
+                },
+                "default_gas_rate_eur_m3": 1.8394
             }
         ]
     }

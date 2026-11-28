@@ -1,0 +1,63 @@
+{
+    "$schema": "https://slimhuys.nl/schemas/dynamic-tariffs-nl/v2.json",
+    "generated_at": "2026-11-28T04:00:10+01:00",
+    "source_url": "https://slimhuys.nl/v1/suppliers",
+    "license": "CC-BY-4.0",
+    "maintainer": "SlimHuys (https://slimhuys.nl)",
+    "supplier": {
+        "slug": "greenchoice",
+        "name": "Greenchoice",
+        "active": true,
+        "official_api": false,
+        "effective_from": "2018-01-01",
+        "verified_at": "2026-11-09",
+        "sources": [
+            "https://www.greenchoice.nl/stroom-en-gas/dynamisch-energiecontract/",
+            "https://jeroen.nl/dynamische-energie/aanbieders/greenchoice",
+            "https://aboutwatts.com/nl/dynamisch-energiecontract/greenchoice/"
+        ],
+        "params": {
+            "billing_resolution_minutes": 15,
+            "markup_eur_per_kwh": 0.0224,
+            "monthly_fee_eur": 7.5,
+            "monthly_fee_electricity_only_eur": null
+        },
+        "default_gas_rate_eur_m3": 1.05,
+        "gas_markup_eur_per_m3": 0.0749,
+        "pricing_spec": {
+            "version": 1,
+            "consumed": {
+                "epex": "quarter",
+                "pipeline": [
+                    {
+                        "op": "add",
+                        "ref": "tax.energy_tax_electricity",
+                        "label": "Energiebelasting"
+                    },
+                    {
+                        "op": "multiply",
+                        "ref": "tax.vat_rate",
+                        "factor": "1+x",
+                        "label": "21% btw"
+                    },
+                    {
+                        "op": "add",
+                        "value": 0.0224,
+                        "label": "Greenchoice-handling-fee"
+                    }
+                ]
+            },
+            "delivered": {
+                "strategy": "feedin_market_minus",
+                "params": {
+                    "fee_eur_per_kwh": 0.0224,
+                    "fee_includes_vat": true
+                }
+            }
+        },
+        "formula": "**Afnemen (per kWh):**\n  EPEX-kwartierprijs\n  + Energiebelasting (tax_rates) — Energiebelasting\n  × (1 + 21% btw (tax_rates)) — 21% btw\n  + €0,0224 — Greenchoice-handling-fee\n\n**Teruglevering (per kWh):**\n  max(0, EPEX-kwartier − €0,0224 incl. btw) × 1,21 (incl. btw)",
+        "signup_url": "https://www.greenchoice.nl/stroom-en-gas/dynamisch-energiecontract/",
+        "notes": "Added 2026-11-09 (jeroen.nl + Selectra/aboutwatts; Greenchoice publiceert de bedragen niet zelf — MEDIUM, verifieer bij dynamischetarieven@greenchoice.nl). Inkoopvergoeding 2,24 ct/kWh incl. btw, vaste leveringskosten €7,50/mnd (gas €7,49). Kwartierprijzen volgens greenchoice.nl (jeroen.nl noemt uur). TLV = marktprijs incl. btw − 2,24 ct verkoopvergoeding, ook binnen saldeervolume. Gas dagprijs 06:00–06:00 + €0,0749/m³. Brand-color benadering — verifieer.",
+        "history": []
+    }
+}
